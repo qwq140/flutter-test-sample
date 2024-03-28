@@ -9,7 +9,6 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
-
   late Counter counter;
 
   @override
@@ -37,9 +36,17 @@ class _CounterPageState extends State<CounterPage> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ElevatedButton(onPressed: increment, child: Text('증가')),
+            ElevatedButton(
+              key: const Key('increment'),
+              onPressed: increment,
+              child: const Text('증가'),
+            ),
             Text('${counter.value}'),
-            ElevatedButton(onPressed: decrement, child: Text('감소')),
+            ElevatedButton(
+              key: const Key('decrement'),
+              onPressed: decrement,
+              child: const Text('감소'),
+            ),
           ],
         ),
       ),
